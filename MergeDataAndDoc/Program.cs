@@ -25,10 +25,21 @@ namespace MergeDataAndDoc
 
             using(StreamWriter outputFile = new StreamWriter(outputFileName)) //write file
             {
+                char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
+
+
                 string line; //test
                 while((line = inputFile.ReadLine()) != null) //依序讀入每一行
                 {
-                    string outputLine = "***" + line;
+                    int count = 0;
+                    string[] words = line.Split(delimiterChars);
+
+                    string outputLine =  words[count]+"先生,";
+                    count++;
+                    string outputLine1 = words[count] + "身分證";
+                    count++;
+                    string outputLine2 = words[count] + "年數";
+
                     Console.WriteLine("Write line: " + outputLine);
                     outputFile.WriteLine(outputLine);
                 }
