@@ -21,17 +21,21 @@ namespace MergeDataAndDoc
                 outputFileName = args[1];
             }
 
-            using (StreamReader inputFile = new StreamReader(inputFileName))
-            using(StreamWriter outputFile = new StreamWriter(outputFileName))
+            using (StreamReader inputFile = new StreamReader(inputFileName)) //read file
+
+            using(StreamWriter outputFile = new StreamWriter(outputFileName)) //write file
             {
                 string line; //test
-                while((line = inputFile.ReadLine()) != null)
+                while((line = inputFile.ReadLine()) != null) //依序讀入每一行
                 {
                     string outputLine = "***" + line;
                     Console.WriteLine("Write line: " + outputLine);
                     outputFile.WriteLine(outputLine);
                 }
             }
+
+            Console.ReadLine();
         }
     }
+ 
 }
