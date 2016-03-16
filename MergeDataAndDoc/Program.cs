@@ -34,14 +34,16 @@ namespace MergeDataAndDoc
                     int count = 0;
                     string[] words = line.Split(delimiterChars);
 
-                    string outputLine =  words[count]+"先生,";
+                    string outputLine =  words[count]+"先生   ,";
                     count++;
-                    string outputLine1 = words[count] + "身分證";
-                    count++;
-                    string outputLine2 = words[count] + "年數";
 
-                    Console.WriteLine("Write line: " + outputLine);
-                    outputFile.WriteLine(outputLine);
+                    string outputLine1 =  "身分證號碼為: "+ words[count] ;
+                    count++;
+
+                    string outputLine2 =  "為本校專任教師，聘期 "+words[count] ;
+
+                    Console.WriteLine("Write line: " + outputLine+outputLine1+outputLine2);
+                    outputFile.WriteLine(outputLine+outputLine1+outputLine2);
                 }
             }
 
