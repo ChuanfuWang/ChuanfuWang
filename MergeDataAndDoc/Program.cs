@@ -40,10 +40,12 @@ namespace MergeDataAndDoc
                     string outputLine1 =  "身分證號碼為: "+ words[count] ;
                     count++;
 
-                    string outputLine2 =  "為本校專任教師，聘期 "+words[count] ;
+                    string outputLine2 =  "為本校專任教師，聘期 "+words[count]+"年" ;
 
                     Console.WriteLine("Write line: " + outputLine+outputLine1+outputLine2);
                     outputFile.WriteLine(outputLine+outputLine1+outputLine2);
+                    outputFile.WriteLine("\n"+"此聘                                  "+"\n"+"校長");
+                    outputFile.WriteLine("\n");
                 }
             }
 
