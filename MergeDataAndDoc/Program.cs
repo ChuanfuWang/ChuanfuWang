@@ -49,8 +49,17 @@ namespace MergeDataAndDoc
                 }
             }
 
+            using (StreamReader st = new StreamReader("data.txt")) ;
+         
+   
+
+
             Console.ReadLine();
+
+            
         }
+
+
     }
  
 }
