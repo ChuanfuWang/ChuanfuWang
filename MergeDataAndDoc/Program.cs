@@ -9,54 +9,19 @@ namespace MergeDataAndDoc
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main (string[] args)
         {
-            string inputFileName = "defaultInput.txt";
-            string outputFileName = "defaultOutput.txt";
-
-            Console.WriteLine("test");
-            if (args.Length == 2)
+            using (StreamReader sr = new StreamReader("data.txt")) 
+            using (StreamWriter sw = new StreamWriter("result.txt")) 
             {
-                inputFileName = args[0];
-                outputFileName = args[1];
-            }
+                string line;
 
-            using (StreamReader inputFile = new StreamReader(inputFileName)) //read file
-
-            using(StreamWriter outputFile = new StreamWriter(outputFileName)) //write file
-            {
-                char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
-
-
-                string line; //test
-                while((line = inputFile.ReadLine()) != null) //依序讀入每一行
+                while ((line = sr.ReadLine())!=null)
                 {
-                    int count = 0;
-                    string[] words = line.Split(delimiterChars);
-
-                    string outputLine =  words[count]+"先生   ,";
-                    count++;
-
-                    string outputLine1 =  "身分證號碼為: "+ words[count] ;
-                    count++;
-
-                    string outputLine2 =  "為本校專任教師，聘期 "+words[count]+"年" ;
-
-                    Console.WriteLine("Write line: " + outputLine+outputLine1+outputLine2);
-                    outputFile.WriteLine(outputLine+outputLine1+outputLine2);
-                    outputFile.WriteLine("\n"+"此聘                                  "+"\n"+"校長");
-                    outputFile.WriteLine("\n");
+                    sw.WriteLine("#" + line);
                 }
             }
 
-            using (StreamReader st = new StreamReader("data.txt")) ;
-         
-   
-
-
-            Console.ReadLine();
-
-            
         }
 
 
