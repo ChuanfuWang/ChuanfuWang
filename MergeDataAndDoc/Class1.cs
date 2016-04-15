@@ -23,6 +23,16 @@ namespace MergeDataAndDoc
                 Assert.That(output.ToString(), Is.EqualTo("#haha\r\n"));
 
             }
+
+            [Test]
+            public void Test1()
+            {
+                StringReader input = new StringReader("haha");
+                StringWriter output = new StringWriter();
+                Program.comment2(input, output);
+
+                Assert.That(output.ToString(), Is.EqualTo("@haha\r\n"));
+            }
         }
     }
 }

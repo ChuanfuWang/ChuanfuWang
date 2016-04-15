@@ -30,6 +30,18 @@ namespace MergeDataAndDoc
         }
 
 
+        public static void comment2(TextReader sr, TextWriter sw)
+        {
+            string line;
+
+            while ((line = sr.ReadLine()) != null)
+            {
+                sw.WriteLine("@" + line);
+            }
+        }
+
+
+
     }
  
 }
