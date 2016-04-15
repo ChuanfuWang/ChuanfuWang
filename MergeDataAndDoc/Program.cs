@@ -14,14 +14,19 @@ namespace MergeDataAndDoc
             using (StreamReader sr = new StreamReader("data.txt")) 
             using (StreamWriter sw = new StreamWriter("result.txt")) 
             {
-                string line;
-
-                while ((line = sr.ReadLine())!=null)
-                {
-                    sw.WriteLine("#" + line);
-                }
+                comment(sr, sw);
             }
 
+        }
+
+        public static void comment(TextReader sr, TextWriter sw)
+        {
+            string line;
+
+            while ((line = sr.ReadLine()) != null)
+            {
+                sw.WriteLine("#" + line);
+            }
         }
 
 
